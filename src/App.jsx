@@ -18,8 +18,13 @@ function App() {
   return (
     <>
       <TaskProvider>
-        <Layout/>
-        <TaskList/>
+        <BrowserRouter>
+          <Routes>
+            <Route element={<Layout/>}>
+              <Route path="/" element={<TaskList/>}/>
+            </Route>
+          </Routes>
+        </BrowserRouter>
       </TaskProvider>
     </>
   )

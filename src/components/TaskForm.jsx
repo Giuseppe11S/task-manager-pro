@@ -11,7 +11,6 @@ export default function TaskForm() {
 
   const [deadline, SetDeadline] = useState(false)
 
-
   const toggleCalendar = () => (SetDeadline(!deadline))
 
   // Saving and updating the object from user's input
@@ -57,7 +56,7 @@ export default function TaskForm() {
         {/* to set date*/}
               <div className="border flex mt-[20px]">
               
-              <button className="border text-black-500 mr-[5px]"
+              <button type="button" className="border text-black-500 mr-[5px]"
               onClick={toggleCalendar}>
                 Set deadline
               </button>
