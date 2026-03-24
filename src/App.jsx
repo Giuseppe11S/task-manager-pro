@@ -6,13 +6,21 @@ import './App.css'
 import Layout from './Layout/Layout'
 import TaskForm from './components/TaskForm'
 
+// import pages
+import TaskList from './pages/TaskList'
+
+// import context | provider
+import TaskProvider from './context/TaskContext'
+
 function App() {
   
 
   return (
     <>
-      <Layout/>
-      <TaskForm/>
+      <TaskProvider>
+        <Layout/>
+        <TaskList/>
+      </TaskProvider>
     </>
   )
 }

@@ -1,17 +1,16 @@
-import { useState } from "react"
-// form in Home page
+import { useContext, useState } from "react"
+import { TaskContext } from "../context/TaskContext"
+
+// components for ui
 import { Calendar } from "@/components/ui/calendar"
 
 export default function TaskForm() {
 
-  const [deadline, SetDeadline] = useState(false)
-  const [dataTask, setDataTask] = useState({
-    title: '',
-    description: '',
-    flagship:'' ,
-    deadline: '',
+  // destructoring from context
+  const { dataTask, setDataTask, tasks, setTasks } = useContext(TaskContext)
 
-  })
+  const [deadline, SetDeadline] = useState(false)
+
 
   const toggleCalendar = () => (SetDeadline(!deadline))
 
@@ -32,6 +31,11 @@ export default function TaskForm() {
 
   const handleChange = (e) => {
     e.preventDefault()
+    // save of user input
+    setTasks([...tasks, dataTask])
+    // reset input value
+    setDataTask({title: '', description: '', flagship: '', deadline: ''})
+    console.log(tasks);
   } 
 
   return (
@@ -72,7 +76,7 @@ export default function TaskForm() {
                       High
                     </button>
               </div>
-              <button type="submit" onClick={handleChange}>+ Add Task</button>
+              <button onClick={handleChange}>+ Add Task</button>
           </div>
           {/* Calendar */}
         </div>
