@@ -1,10 +1,10 @@
 import { NotebookPen, Moon, User, Sun } from "lucide-react"
 // navbar
 
-export default function NavBar({  }){
+export default function NavBar(){
   return (
     <>
-       <nav className="flex justify-around bg-white">
+       <nav className="flex justify-around bg-white border-b-gray-600 fixed w-full">
         {/* Logo */}
           <ul className="flex py-[20px] gap-[5px] ">
             <li>

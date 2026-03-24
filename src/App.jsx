@@ -4,6 +4,7 @@ import './App.css'
 
 // import layout
 import Layout from './Layout/Layout'
+import TaskForm from './components/TaskForm'
 
 function App() {
   
@@ -11,6 +12,7 @@ function App() {
   return (
     <>
       <Layout/>
+      <TaskForm/>
     </>
   )
 }
